@@ -82,6 +82,7 @@ body{
         border: None;
         background-color: transparent;
         padding: 2.8%;
+        outline: #ffffff;
     }
     #em, #pd{
         text-align: left;
