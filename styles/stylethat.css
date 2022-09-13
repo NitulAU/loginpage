@@ -1,0 +1,51 @@
+body{
+    margin:0;
+    text-align: center;
+}
+.boxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#box1{
+    background-image: linear-gradient(to bottom right,rgb(113, 12, 113), rgb(212, 0, 255));
+}
+h1{
+    margin: 0;
+}
+#head1{
+    /* Set the background color */
+    background: linear-gradient(to right, #ffffff 0%, #e57eff 100%);
+    /* Mask the color to the text, and remove the rest  */
+    -webkit-background-clip: text;
+    /* Make the text fill color value transparent so the masked background color comes through */
+    color: transparent;
+}
+#box2{
+    background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgb(226, 169, 238));
+}
+#head2{
+    /* Set the background color */
+    background: linear-gradient(to left,rgb(113, 12, 113), rgb(212, 0, 255));
+    /* Mask the color to the text, and remove the rest  */
+    -webkit-background-clip: text;
+    /* Make the text fill color value transparent so the masked background color comes through */
+    color: transparent;   
+}
+.footer{
+    display: flex;
+    position: absolute;
+    background-color: rgb(113, 12, 113);
+    /* background-image: linear-gradient(to bottom,rgb(226, 169, 238), rgb(119, 33, 136)); */
+    color:#ffffff;
+    width: 100%;
+    min-height: 10%;
+    justify-content: center;
+    align-items: center;
+}
+.made{
+    font-family: 'Ms Madi', cursive;
+    font-size: 1.1rem;
+    /* font-weight: bold; */
+}
