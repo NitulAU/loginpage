@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/f163a432b2.js" crossorigin="anonymous"></script>
     <script src="login.js"></script>
     <link rel="stylesheet" href="styles/styleit.css">
+    <link rel="icon" href="images/favicon.ico">
     <title>Login page</title>
 </head>
 <body>
@@ -21,24 +22,27 @@
                 <h1 id="heading">Member Login</h1>
                 <form autocomplete="on">
                     <!-- <div class="container" > -->
-                        <div class="row" id="em">  
+                        <div class="row inForm" id="em">  
                             <div class="col-2 boxes iconbox">
                                 <i class="fa-solid fa-envelope icon"></i>
                             </div>
                             <div class="col-10 boxes">
-                                <input type="email" id="username" placeholder="email" required>
+                                <input type="email" id="username" placeholder="email">
                             </div>             
                         </div>
-                        <div class="row" id="pd">
+                        <p class="errorPart inForm" id="error1">&nbsp; </p>
+                        <div class="row inForm" id="pd">
                             <div class="col-2 boxes iconbox">
                                 <i class="fa-sharp fa-solid fa-lock icon"></i>
                             </div>
                             <div class="col-10 boxes">
-                                <input type="password" id="password" placeholder="******" maxlength="10" required>
+                                <input type="password" id="password" placeholder="******" maxlength="10">
                             </div>
                         </div>
+                        <p class="errorPart inForm" id="error2">&nbsp; </p>
                 <!-- </div> -->
-                    <a><input id="lgbtn" type="submit" value="LOGIN" onclick="logValidate()"></a>
+                    <a><button type="button" id="lgbtn" value="LOGIN" onclick="logValidate()">LOGIN</button></a>
+                    <p class="errorPart inForm" id="mainError">Login failed!</p>
                 </form>
                 <p class="others" id="forgot">Forgot&nbsp<a href="#">Username /</a><a href="#">&nbspPassword ?</a></p>
                 <a href="#" class="others" id="acc">Create your account <i class="fa-sharp fa-solid fa-arrow-right"></i></a> 
