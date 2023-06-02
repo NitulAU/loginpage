@@ -1,5 +1,6 @@
 const express=require('express');
 const app=express();
+app.use(express.static('public'));
 // app.set("views",'view');
 app.set('view engine','ejs');
 app.get("/",(req,res)=>{
