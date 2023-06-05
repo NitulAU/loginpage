@@ -31,9 +31,9 @@ function logValidate(){
                     mainError.style.display="none";
                     userError.innerHTML="&nbsp;";
                     passError.innerHTML="&nbsp;";
-                    alert(`Login success, welcome ${currentUser}`);
+                    // alert(`Login success, welcome ${currentUser}`);
                     // window.open("second.html");
-                    window.location.href="second.html";
+                    window.location.href="/main";
                     // window.location.assign("second.html");
                     return true;
                 }
@@ -66,5 +66,5 @@ function logValidate(){
     }
 }
 // For Second.html
-// var cont=document.querySelector("h1");
-// cont.innerText=`Hi ${currentUser}, Welcome  to Home page`;
+// const welcomeText=document.querySelector(".cont");
+// welcomeText.innerText=`Hi  ${currentUser}, Welcome  to Home page`;
