@@ -31,9 +31,9 @@ function logValidate(){
                     mainError.style.display="none";
                     userError.innerHTML="&nbsp;";
                     passError.innerHTML="&nbsp;";
-                    // alert(`Login success, welcome ${currentUser}`);
-                    window.open("second.html");
-                    // window.location.href="second.html";
+                    alert(`Login success, welcome ${currentUser}`);
+                    // window.open("second.html");
+                    window.location.href="second.html";
                     // window.location.assign("second.html");
                     return true;
                 }
