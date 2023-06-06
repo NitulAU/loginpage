@@ -1,16 +1,14 @@
 const express=require('express');
 const app=express();
+const PORT=3000;
 app.use(express.static('public'));
-// app.set("views",'view');
 app.set('view engine','ejs');
 app.get("/",(req,res)=>{
-    // res.sendStatus(200);
     res.render('index');
 });
 app.get("/main",(req,res)=>{
-    // res.sendStatus(200);
     res.render('second');
 });
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("Server started at http://localhost:3000");
 })
