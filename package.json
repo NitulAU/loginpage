@@ -1,5 +1,6 @@
 {
   "name": "loginpage",
+  "type": "module",
   "version": "1.0.0",
   "description": "username1: admin@example.com\r password: password",
   "main": "login.js",
