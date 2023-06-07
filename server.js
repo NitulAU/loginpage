@@ -7,9 +7,11 @@ app.get("/",(req,res)=>{
     res.render('index');
 });
 app.get("/main",(req,res)=>{
-    res.render('second');
+    res.status(200).render('second');
 });
-app.listen(PORT,()=>{
-    console.log("Server started at http://localhost:3000");
-});
-module.exports=app;
+if(process.env.NODE_ENV!=='test'){
+    app.listen(PORT,()=>{
+        console.log("Server started at http://localhost:3000");
+    });
+}
+export default app;
