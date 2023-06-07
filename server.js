@@ -11,4 +11,5 @@ app.get("/main",(req,res)=>{
 });
 app.listen(PORT,()=>{
     console.log("Server started at http://localhost:3000");
-})
+});
+module.exports=app;
