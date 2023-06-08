@@ -1,40 +1,32 @@
-var users=["admin@example.com","nitul@example.com","advaith@example.com","arjun@example.com"]; // list of valid usernames
-var usernames=[];
-for(var i=0;i<users.length;i++){                //extracting name of user
-    var names=users[i].split("@");
-    usernames.push(names[0].toUpperCase());
-}
-var currentUser=null;
+var users=["admin@example.com",
+            "nitul@example.com",
+            "advaith@example.com",
+            "arjun@example.com"
+        ]; // list of valid usernames
+
 function logValidate(){
     var userError=document.getElementById("error1");
     var passError=document.getElementById("error2");
     var mainError=document.getElementById("mainError");
     userError.innerHTML="&nbsp;";
     passError.innerHTML="&nbsp;";
+
     var uname=document.getElementById("username").value;
     var pd=document.getElementById("password").value;
-    var noName=false;
-    var nopd=false;
-    if(uname!=""){ // check for blank username
-        noName=true;
-        if(pd!=""){     //check for blank password
-            nopd=true;
-            var userFound=false;
-            for(var i=0;i<users.length;i++){
-                if(users[i]==uname){            //username validation
-                    userFound=true;
-                    currentUser=usernames[i];
-                }
-            }
+    var noName= uname.trim()=="";
+    var nopd= pd.trim()=="";
+
+    if(!noName){ // check for blank username
+        if(!nopd){     //check for blank password      
+            var userIndex = users.indexOf(uname); // find the index of the username
+            var userFound = userIndex !== -1;     //confirming username is valid
             if(userFound){
-                if(pd=="password"){             //password validation
+                if(pd==="password"){             //password validation (strict comparison)
                     mainError.style.display="none";
                     userError.innerHTML="&nbsp;";
                     passError.innerHTML="&nbsp;";
-                    // alert(`Login success, welcome ${currentUser}`);
-                    window.open("second.html");
-                    // window.location.href="second.html";
-                    // window.location.assign("second.html");
+
+                    window.location.href="second.html";
                     return true;
                 }
                 else{
@@ -65,6 +57,3 @@ function logValidate(){
         return false;
     }
 }
-// For Second.html
-// var cont=document.querySelector("h1");
-// cont.innerText=`Hi ${currentUser}, Welcome  to Home page`;
