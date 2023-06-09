@@ -26,34 +26,35 @@ function logValidate(){
                     userError.innerHTML="&nbsp;";
                     passError.innerHTML="&nbsp;";
 
-                    window.location.href="second.html";
+                    window.location.href="/main";
                     return true;
                 }
                 else{
-                    passError.previousElementSibling.style.border="1px solid red";
+                    // passError.previousElementSibling.style.border="1px solid red";
                     mainError.style.display="block";
                     passError.innerText="wrong password!";
                     return false;
                 }
             } 
             else{
-                userError.previousElementSibling.style.border="1px solid red";
+                // userError.previousElementSibling.style.border="1px solid red";
                 mainError.style.display="block";
                 userError.innerText="user not found!";
                 return false;
             }
         }
         else{
-            passError.previousElementSibling.style.border="1px solid red";
+            // passError.previousElementSibling.style.border="1px solid red";
             mainError.style.display="block";
-            passError.textContent="please enter the password";
+            passError.textContent="please enter the password!";
             return false;
         }
     }
     else{
-        userError.previousElementSibling.style.border="1px solid red";
+        // userError.previousElementSibling.style.border="1px solid red";
         mainError.style.display="block";
         userError.innerText="please enter a user name!";
         return false;
     }
 }
+export default logValidate;
