@@ -3,7 +3,8 @@ var users=["admin@example.com",
             "advaith@example.com",
             "arjun@example.com"
         ]; // list of valid usernames
-
+window.logValidate=logValidate;
+//bringing the function from global scope to module scope
 function logValidate(){
     var userError=document.getElementById("error1");
     var passError=document.getElementById("error2");
@@ -32,6 +33,7 @@ function logValidate(){
                 else{
                     passError.previousElementSibling.style.border="1px solid red";
                     mainError.style.display="block";
+                    // userError.innerHTML='&nbsp;';
                     passError.innerText="wrong password!";
                     return false;
                 }
