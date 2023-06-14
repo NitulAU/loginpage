@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    font-family:"Raleway", sans-serif;
+    font-weight: bold;
+}
+.outer{
+    position: absolute;
+    background-image: linear-gradient(to bottom right,rgb(113, 12, 113), rgb(212, 0, 255));
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.inner{
+    position: absolute;
+    padding: 4% 0;
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+    width: 84%;
+    background-color: #ffffff;
+    border-radius: 25px;
+    overflow-y:hidden;    
+}
+.logo-box{
+    position:absolute;
+    width: 58%;
+    height: 82%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+.logo img{
+    width: 100%;;
+}
+#login-btn{
+    margin: auto;
+    background-color: rgb(0, 255, 76);
+    padding: 2.5%;
+    color:white;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size:20px;
+    width: 84%;
+    border: None;
+}
+#login-btn:hover{
+    background-color: rgb(7, 181, 59);
+}
+h1{
+    margin: 0;
+}
+@media screen and (max-width: 699px){
+    .hideimg{
+    display:none;
+    }
+    .login-box{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 700px){
+    .login-box{
+        float: right;
+        width: 42%;
+        text-align: center;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 5% auto;
+}
+.form-row{
+    font-size: 1rem;
+    margin: auto;
+    width: 84%;
+}
+.errorPart{
+    color: red;
+    text-align: left;
+    font-weight: lighter;
+    padding-left: 10%;
+    padding-bottom: 2%;
+}
+#mainError{
+    display: none;
+}
+.boxes{
+    padding: 0;    
+}
+.iconbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.inputicon{
+    max-height:fit-content;
+}  
+input{
+    border: None;
+    background-color: transparent;
+    /* padding: 2.8% 0%; */
+    width:98%;
+    outline: #ffffff;
+}
+#em, #pd{
+        font-size: 1rem;
+        background-color:rgb(220,220,220);
+        border-radius: 25px;
+        background-color:rgb(220,220,220);
+        padding: 2.8% 0%;
+} 
+#em:hover,#pd:hover{
+    background-color:rgb(219, 174, 218);
+    text-shadow: #ffffff;
+
+}
+#heading{
+    font-size: 2rem;
+    font-weight: bold;
+}
+a{
+    color:rgb(0, 255, 64);
+    text-decoration:None;
+} 
+#forgot-pd{
+    display: flex;
+    margin-bottom: 15%;
+    /* margin-top: 5%; */
+    justify-content: center;
+} 
+.others, .errorPart{
+    font-size: 1rem;
+}

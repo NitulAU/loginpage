@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/f163a432b2.js" crossorigin="anonymous"></script>
+    <script type="module" src="login.js"></script>
+    <link rel="stylesheet" href="styles/styleit.css">
+    <link rel="icon" href="images/favicon.ico">
+    <title>Login page</title>
+</head>
+<body>
+    <div class="outer">
+        <main class="inner">
+            <section class="logo-box hideimg">
+                <div class="logo"> <img src="images/2.jpg" alt="image logo" ></div>
+            </section>
+            <section class="login-box">
+                <h1 id="heading">Member Login</h1>
+                <form autocomplete="on">
+
+                    <div class="row form-row" id="em">  
+                        <div class="col-2 boxes iconbox">
+                            <i class="fa-solid fa-envelope icon"></i>
+                        </div>
+                        <div class="col-10 boxes">
+                            <label for="username" hidden>Username</label>
+                            <input type="email" id="username" placeholder="email">
+                        </div>             
+                    </div>
+                    <p class="errorPart form-row" id="error1">&nbsp; </p>
+
+                    <div class="row form-row" id="pd">
+                        <div class="col-2 boxes iconbox">
+                            <i class="fa-sharp fa-solid fa-lock icon"></i>
+                        </div>
+                        <div class="col-10 boxes">
+                            <label for="password" hidden>Password</label>
+                            <input type="password" id="password" placeholder="******" maxlength="10">
+                        </div>
+                    </div>
+                    <p class="errorPart form-row" id="error2">&nbsp; </p>
+
+                    <button type="button" id="login-btn" value="LOGIN" onclick="logValidate()">Login</button>
+                    <p class="errorPart form-row" id="mainError">Login failed!</p>
+
+                </form>
+                <footer>
+                    <p class="others" id="forgot-pd">Forgot&nbsp<a href="#">Username /</a><a href="#">&nbspPassword ?</a></p>
+                    <a href="#" class="others" id="craete-ac">Create your account <i class="fa-sharp fa-solid fa-arrow-right"></i></a> 
+                </footer>
+            </section>
+        </nav>
+    </div>
+</body>
+</html>
