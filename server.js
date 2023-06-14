@@ -7,7 +7,7 @@ app.get("/",(req,res)=>{
     res.render('index');
 });
 app.get("/main",(req,res)=>{
-    res.status(200).render('second');
+    res.render('second');
 });
 if(process.env.NODE_ENV!=='test'){
     app.listen(PORT,()=>{
