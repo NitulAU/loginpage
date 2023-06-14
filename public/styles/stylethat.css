@@ -33,7 +33,7 @@ h1{
     /* Make the text fill color value transparent so the masked background color comes through */
     color: transparent;   
 }
-.footer{
+.credit-bar{
     display: flex;
     position: absolute;
     background-color: rgb(113, 12, 113);
