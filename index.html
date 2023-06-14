@@ -14,39 +14,45 @@
 </head>
 <body>
     <div class="outer">
-        <nav class="inner">
-            <nav class="imgbox hideimg">
-                <img class="image" src="images/2.jpg" alt="image evde" >
-            </nav>
-            <nav class="loginbox">
+        <main class="inner">
+            <section class="logo-box hideimg">
+                <div class="logo"> <img src="images/2.jpg" alt="image logo" ></div>
+            </section>
+            <section class="login-box">
                 <h1 id="heading">Member Login</h1>
                 <form autocomplete="on">
-                    <!-- <div class="container" > -->
-                        <div class="row inForm" id="em">  
-                            <div class="col-2 boxes iconbox">
-                                <i class="fa-solid fa-envelope icon"></i>
-                            </div>
-                            <div class="col-10 boxes">
-                                <input type="email" id="username" placeholder="email">
-                            </div>             
+
+                    <div class="row form-row" id="em">  
+                        <div class="col-2 boxes iconbox">
+                            <i class="fa-solid fa-envelope icon"></i>
                         </div>
-                        <p class="errorPart inForm" id="error1">&nbsp; </p>
-                        <div class="row inForm" id="pd">
-                            <div class="col-2 boxes iconbox">
-                                <i class="fa-sharp fa-solid fa-lock icon"></i>
-                            </div>
-                            <div class="col-10 boxes">
-                                <input type="password" id="password" placeholder="******" maxlength="10">
-                            </div>
+                        <div class="col-10 boxes">
+                            <label for="username" hidden>Username</label>
+                            <input type="email" id="username" placeholder="email">
+                        </div>             
+                    </div>
+                    <p class="errorPart form-row" id="error1">&nbsp; </p>
+
+                    <div class="row form-row" id="pd">
+                        <div class="col-2 boxes iconbox">
+                            <i class="fa-sharp fa-solid fa-lock icon"></i>
                         </div>
-                        <p class="errorPart inForm" id="error2">&nbsp; </p>
-                <!-- </div> -->
-                    <a><button type="button" id="lgbtn" value="LOGIN" onclick="logValidate()">LOGIN</button></a>
-                    <p class="errorPart inForm" id="mainError">Login failed!</p>
+                        <div class="col-10 boxes">
+                            <label for="password" hidden>Password</label>
+                            <input type="password" id="password" placeholder="******" maxlength="10">
+                        </div>
+                    </div>
+                    <p class="errorPart form-row" id="error2">&nbsp; </p>
+
+                    <button type="button" id="login-btn" value="LOGIN" onclick="logValidate()">Login</button>
+                    <p class="errorPart form-row" id="mainError">Login failed!</p>
+
                 </form>
-                <p class="others" id="forgot">Forgot&nbsp<a href="#">Username /</a><a href="#">&nbspPassword ?</a></p>
-                <a href="#" class="others" id="acc">Create your account <i class="fa-sharp fa-solid fa-arrow-right"></i></a> 
-            </nav>
+                <footer>
+                    <p class="others" id="forgot-pd">Forgot&nbsp<a href="#">Username /</a><a href="#">&nbspPassword ?</a></p>
+                    <a href="#" class="others" id="craete-ac">Create your account <i class="fa-sharp fa-solid fa-arrow-right"></i></a> 
+                </footer>
+            </section>
         </nav>
     </div>
 </body>
