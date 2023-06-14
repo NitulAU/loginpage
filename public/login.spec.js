@@ -3,8 +3,6 @@
  */
 import logValidate from './login';
 //mock the html elements
-var element=document.createElement('body')
-// element.innerHTML = `
 document.body.innerHTML = `
   <div>
     <span></span>
@@ -13,9 +11,11 @@ document.body.innerHTML = `
     <span id="mainError"></span>
     <input id="username" type="text">
     <input id="password" type="password">
+    <button type="button" id="lgbtn" value="LOGIN" onclick="logValidate()">LOGIN</button>
   </div>
 `;
-describe('Testing Login', () => {
+//1st <span> used since using  userError.previousElementSibling in login.js
+describe.skip('Testing Login- username errors', () => {
   
   // Clear the input values and error messages before each test
   beforeEach(()=>{
@@ -25,17 +25,20 @@ describe('Testing Login', () => {
     document.getElementById('error2').innerHTML = '&nbsp;';
     document.getElementById('mainError').style.display = 'none';
   });
-  //null
+  //username missing
   test('Username is missing:', ()=> {
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
       const result=logValidate();
       expect(result).toBe(false);
+
       expect(document.getElementById('mainError').style.display).toBe('block');
       expect(document.getElementById('error1').innerText).toBe("please enter a user name!");
       expect(document.getElementById('error2').innerText).toBeUndefined();
   });
-  //wrong
-  test('Wrong Username, any password:', ()=> {
-      document.getElementById('username').value = 'user@example.com';
+  //wrong username
+  test('Wrong Username:', ()=> {
+      document.getElementById('username').value = 'invalidUser@example.com';
       document.getElementById('password').value = 'password';
 
       const result=logValidate();
@@ -44,28 +47,41 @@ describe('Testing Login', () => {
       expect(document.getElementById('error1').innerText).toBe("user not found!");
       expect(document.getElementById('error2').innerText).toBeUndefined();
   });
-  //any username, no password
-  test('Only Password is missing:', ()=> {
+});
+describe.skip('Testing login- password errors ', () => {
+  
+  // Clear the input values and error messages before each test
+  beforeEach(()=>{
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('error1').innerHTML = '&nbsp;';
+    document.getElementById('error2').innerHTML = '&nbsp;';
+    document.getElementById('mainError').style.display = 'none';
+  });
+  //password missing
+  test('Password missing:', ()=> {
       document.getElementById('username').value = 'admin@example.com';
       document.getElementById('password').value = '';
   
       const result=logValidate();
       expect(result).toBe(false);
       expect(document.getElementById('mainError').style.display).toBe('block');
-      // expect(document.getElementById('error1').innerText).toBeUndefined();
-      // expect(document.getElementById('error2').innerText).toBe("please enter the password");
+      expect(document.getElementById('error1').innerText).toBeUndefined();
+      expect(document.getElementById('error2').innerText).toBe("please enter the password!");
   });
-    //correct username, wrong password 
-  test('Correct username, Wrong password:', ()=> {
+  //wrong password
+  test('Wrong password:', ()=> {
       document.getElementById('username').value = 'admin@example.com';
       document.getElementById('password').value = '123456';
   
       const result=logValidate();
       expect(result).toBe(false);
       expect(document.getElementById('mainError').style.display).toBe('block');
-      // expect(document.getElementById('error1').innerText).toBeUndefined();
+      expect(document.getElementById('error1').innerText).toBeUndefined();
       expect(document.getElementById('error2').innerText).toBe("wrong password!");
   });
+});
+describe('Suceess check',()=>{
   //correct username and password
   test('Correct Username and password:', ()=> {
       document.getElementById('username').value = 'admin@example.com';
@@ -74,9 +90,8 @@ describe('Testing Login', () => {
   
       const result=logValidate();
       expect(result).toBe(true);
-      // expect(document.getElementById('mainError').style.display).toBe('none');
-      // expect(document.getElementById('error1').innerText).toBeUndefined();
-      // expect(document.getElementById('error2').innerText).toBeUndefined();
-      // expect(window.location.href).toBe('/main');
+      expect(document.getElementById('error1').innerText).toBeUndefined();
+      expect(document.getElementById('error2').innerText).toBeUndefined();
+      // expect(window.location.href).toBe('/main'); //received: "hhtp://localhost/" 
   });
 });

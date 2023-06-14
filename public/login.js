@@ -1,3 +1,4 @@
+
 var users=["admin@example.com",
             "nitul@example.com",
             "advaith@example.com",
@@ -6,9 +7,9 @@ var users=["admin@example.com",
 window.logValidate=logValidate;
 //bringing the function from global scope to module scope
 function logValidate(){
-    var userError=document.getElementById("error1");
-    var passError=document.getElementById("error2");
-    var mainError=document.getElementById("mainError");
+    const userError=document.getElementById("error1");
+    const passError=document.getElementById("error2");
+    const mainError=document.getElementById("mainError");
     userError.innerHTML="&nbsp;";
     passError.innerHTML="&nbsp;";
 
@@ -33,7 +34,6 @@ function logValidate(){
                 else{
                     passError.previousElementSibling.style.border="1px solid red";
                     mainError.style.display="block";
-                    // userError.innerHTML='&nbsp;';
                     passError.innerText="wrong password!";
                     return false;
                 }
@@ -48,7 +48,7 @@ function logValidate(){
         else{
             passError.previousElementSibling.style.border="1px solid red";
             mainError.style.display="block";
-            passError.textContent="please enter the password!";
+            passError.innerText="please enter the password!";
             return false;
         }
     }
