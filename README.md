@@ -9,8 +9,9 @@
 
 Prerequisites
 ```
-npm install express
-npm install ejs
+npm install express ejs nodemon
+npm install jest jest-environment-jsdom --save-dev
+npm install --save-dev @babel/preset-env
 ```
 To execute test file 
 ```
